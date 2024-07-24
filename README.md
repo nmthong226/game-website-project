@@ -1,1 +1,1 @@
-# game-website-project
+# The homepage for a game
