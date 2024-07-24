@@ -1,1 +1,1 @@
-# The homepage for a game
+# Gaming Website
