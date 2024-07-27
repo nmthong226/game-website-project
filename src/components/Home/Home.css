@@ -1,0 +1,4 @@
+.section__background .section__content {
+    z-index : 1;
+    position: relative;
+}

@@ -1,0 +1,23 @@
+.navbar {
+    z-index : 10;
+    position: fixed;
+    width   : 100%;
+}
+
+.floattop__background {
+    z-index : 11;
+    position: absolute;
+    width   : 100%;
+}
+
+.floattop__content {
+    z-index : 12;
+    position: relative;
+    width   : 100%;
+}
+
+.floattop__nav--main li:not(:first-child)::before {
+    content    : '/';
+    margin     : 0px 8px auto;
+    font-weight: 900;
+}
