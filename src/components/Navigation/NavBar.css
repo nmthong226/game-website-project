@@ -21,3 +21,19 @@
     margin     : 0px 8px auto;
     font-weight: 900;
 }
+
+.floattop__nav--main li:last-child::after {
+    content : '';
+    display : block;
+    position: absolute;
+    bottom  : 0px;
+    /* Adjust based on your needs */
+    right   : 0;
+    width   : 160px;
+    height  : 20px;
+    /* Adjust based on your needs */
+}
+
+.floattop__nav--main .dropdown .item--menu::before {
+    content: none;
+}
