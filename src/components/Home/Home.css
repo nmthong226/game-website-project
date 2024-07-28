@@ -2,3 +2,27 @@
     z-index : 1;
     position: relative;
 }
+
+.section__content .bt-play {
+    filter: brightness(1);
+    cursor: pointer;
+}
+
+.section__content .bt-play:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.section__content .game__info {
+    background:linear-gradient(to right, transparent, #00F5CB, transparent);
+}
+
+.section__content .bt-topup:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.section__content .bt-download-item:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
