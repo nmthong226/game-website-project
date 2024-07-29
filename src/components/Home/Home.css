@@ -26,3 +26,8 @@
     filter: brightness(1.2);
     cursor: pointer;
 }
+
+.section__content .sidebar__item:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
