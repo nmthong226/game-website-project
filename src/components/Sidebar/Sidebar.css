@@ -1,0 +1,33 @@
+.section__background.sidebar  {
+    z-index : 1;
+    position: relative;
+}
+
+.sidebar .bt-play {
+    filter: brightness(1);
+    cursor: pointer;
+}
+
+.sidebar .bt-play:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.sidebar .game__info {
+    background: linear-gradient(to right, transparent, #00F5CB, transparent);
+}
+
+.sidebar .bt-topup:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.sidebar .bt-download-item:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+.sidebar .sidebar__item:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
