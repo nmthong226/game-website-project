@@ -4,6 +4,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaUserGroup } from "react-icons/fa6";
 import { AiOutlineTikTok } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io";
+import navDecorLeft from '/nav-decor-left.png';
+import navDecorRight from '/nav-decor-right.png';
 import './NavBar.css';
 
 const NavBar = () => {
