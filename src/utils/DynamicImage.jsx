@@ -38,6 +38,7 @@ const DynamicImage = ({ src, alt, originalWidth, originalHeight, ratio, classNam
                 height: `${dimensions.height}px`
             }}
             className={className}
+            draggable="false"
         />
     );
 };
