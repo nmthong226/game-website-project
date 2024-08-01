@@ -1,0 +1,11 @@
+.news__info:first-child {
+    background-color: #FFEDC1;
+    color           : #D62C15;
+    font-weight     : 800;
+}
+
+.news__info:hover {
+    background-color: rgb(255, 251, 239);
+    color           : #D62C15;
+    font-weight     : 800;
+}
