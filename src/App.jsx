@@ -1,3 +1,4 @@
+import Character from './components/Character/Character'
 import Feature from './components/Feature/Feature'
 import Home from './components/Home/Home'
 import NavBar from './components/Navigation/NavBar'
@@ -11,6 +12,7 @@ function App() {
       <NavBar/>
       <Home/>
       <News/>
+      <Character/>
       <Feature/>
     </div>
   )
