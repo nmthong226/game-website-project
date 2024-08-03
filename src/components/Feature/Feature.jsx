@@ -28,7 +28,6 @@ const SPRING_OPTIONS = {
     damping: 50,
 };
 
-
 const Feature = () => {
     const [imgIndex, setImgIndex] = useState(0);
     const dragX = useMotionValue(0);
