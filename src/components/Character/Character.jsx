@@ -5,20 +5,23 @@ import type_2 from '/type_2.png';
 import type_3 from '/type_3.png';
 import type_4 from '/type_4.png';
 import type_5 from '/type_5.png';
+import type_6 from '/type_6.png';
+import type_7 from '/type_7.png';
 import character_1 from '/character-1.png';
 import type_border from '/type-border.png';
 import DynamicImage from '../../utils/DynamicImage';
-import { motion, motionValue } from 'framer-motion';
-import './Character.css';
+import character_decor from '/character_decor.png';
 
 const positions = [
+  { top: '7%', left: '68%', height: '0px' },
   { top: '15%', left: '82%', height: '60px' },
   { top: '30%', left: '94%', height: '80px' },
   { top: '50%', left: '98%', height: '120px' },
   { top: '70%', left: '94%', height: '80px' },
   { top: '85%', left: '82%', height: '60px' },
+  { top: '95%', left: '68%', height: '0px' },
 ];
-const images = [type_1, type_2, type_3, type_4, type_5];
+const images = [type_7, type_1, type_2, type_3, type_4, type_5, type_6];
 
 const generateKeyframes = (positions) => {
   return positions.map((_, index) => {
@@ -54,21 +57,19 @@ const Character = () => {
   const [currentPositions, setCurrentPositions] = useState(positions);
 
   useEffect(() => {
-    injectKeyframes(positions);
-  }, []);
+    injectKeyframes(currentPositions);
+  }, [currentPositions]);
 
   const handleSelect = () => {
     setAnimate(true);
     // Reset animation state after the animation duration
-    setTimeout(() => setAnimate(false), 2000);
-  };
-
-  const handleAnimationEnd = () => {
-    // Update positions to reflect final state of animation
-    setCurrentPositions(positions.map((_, index) => {
-      const to = positions[(index + 1) % positions.length];
-      return { ...to };
-    }));
+    setTimeout(() => {
+      setAnimate(false);
+      setCurrentPositions(currentPositions.map((_, index) => {
+        const to = currentPositions[(index + 1) % currentPositions.length];
+        return { ...to };
+      }));
+    }, 2000);
   };
 
   return (
@@ -86,27 +87,26 @@ const Character = () => {
       </div>
       <div className='section__content flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
         <div>
-          <img src={character_1} alt='character-1' className='h-[460px]' />
+          <img src={character_1} alt='character-1' className='h-[500px]' />
         </div>
       </div>
       <div className='section__content flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
         <div className='relative'>
           <img src={type_border} alt='character-1' className='h-full w-full' />
-          {positions.map((_, index) => (
+          {currentPositions.map((position, index) => (
             <img
-              key={index}
+              key={`${position.top}-${position.left}-${index}`}
               src={images[index]}
               alt={`type-${index + 1}`}
               className={`absolute hover:cursor-pointer`}
               style={{
-                ...currentPositions[index],
+                ...position,
                 transform: 'translate(-50%, -50%)',
                 animationName: animate ? `move-${index}` : 'none',
                 animationDuration: '2s',
-                animationFillMode: 'both',
+                animationFillMode: 'forwards',
               }}
               onClick={handleSelect}
-              onAnimationEnd={handleAnimationEnd}
             />
           ))}
         </div>
