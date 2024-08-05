@@ -8,9 +8,18 @@ import type_5 from '/type_5.png';
 import type_6 from '/type_6.png';
 import type_7 from '/type_7.png';
 import character_1 from '/character-1.png';
+import character_2 from '/character-2.png';
+import character_3 from '/character-3-2.png';
+import character_4 from '/character-4.png';
+import character_5 from '/character-5-2.png';
+import character_6 from '/character-6.png';
+import character_7 from '/character-7.png';
 import type_border from '/type-border.png';
 import DynamicImage from '../../utils/DynamicImage';
 import character_decor from '/character_decor.png';
+import decor_element from '/decor-element.png';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useAnimate, usePresence } from "framer-motion"
 
 const positions = [
   { top: '7%', left: '68%', height: '0px' },
@@ -53,15 +62,17 @@ const injectKeyframes = (positions) => {
 };
 
 const Character = () => {
-  const [animate, setAnimate] = useState(false);
+  const [animation, setAnimate] = useState(false);
+  const [currentCharacter, setCurrentCharacter] = useState(4);
   const [currentPositions, setCurrentPositions] = useState(positions);
 
   useEffect(() => {
     injectKeyframes(currentPositions);
   }, [currentPositions]);
 
-  const handleSelect = () => {
+  const handleSelect = (index) => {
     setAnimate(true);
+    setCurrentCharacter(index);
     // Reset animation state after the animation duration
     setTimeout(() => {
       setAnimate(false);
@@ -85,30 +96,132 @@ const Character = () => {
           />
         </div>
       </div>
-      <div className='section__content flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
-        <div>
-          <img src={character_1} alt='character-1' className='h-[500px]' />
-        </div>
-      </div>
-      <div className='section__content flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-        <div className='relative'>
-          <img src={type_border} alt='character-1' className='h-full w-full' />
-          {currentPositions.map((position, index) => (
-            <img
-              key={`${position.top}-${position.left}-${index}`}
-              src={images[index]}
-              alt={`type-${index + 1}`}
-              className={`absolute hover:cursor-pointer`}
-              style={{
-                ...position,
-                transform: 'translate(-50%, -50%)',
-                animationName: animate ? `move-${index}` : 'none',
-                animationDuration: '2s',
-                animationFillMode: 'forwards',
-              }}
-              onClick={handleSelect}
-            />
-          ))}
+      <div className='section__content '>
+        <AnimatePresence>
+          {currentCharacter === 0 &&
+            <div className='section__content flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: "1" }}
+                src={character_6}
+                alt='character-6'
+                className='h-[500px]'
+              />
+            </div>
+          }
+        </AnimatePresence>
+        <AnimatePresence>
+          {currentCharacter === 1 &&
+            <div className='section__content flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: "1" }}
+                src={character_7}
+                alt='character-7'
+                className='h-[500px]'
+              />
+            </div>
+          }
+        </AnimatePresence>
+        <AnimatePresence>
+          {currentCharacter === 2 &&
+            <div className='flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: "1" }}
+                src={character_2}
+                alt='character-2'
+                className='h-[500px]'
+              />
+            </div>
+          }
+        </AnimatePresence>
+        <AnimatePresence>
+          {currentCharacter === 3 &&
+            <div className='flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: "1" }}
+                src={character_1}
+                alt='character-1'
+                className='h-[500px]'
+              />
+            </div>
+          }
+        </AnimatePresence>
+        <AnimatePresence>
+          {currentCharacter === 4 &&
+            <div className='flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: "1" }}
+                src={character_4}
+                alt='character-4'
+                className='h-[500px]'
+              />
+            </div>
+          }
+        </AnimatePresence>
+        <AnimatePresence>
+          {currentCharacter === 5 &&
+            <div className='flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: "1" }}
+                src={character_3}
+                alt='character-3'
+                className='h-[500px]'
+              />
+            </div>
+          }
+        </AnimatePresence>
+        <AnimatePresence>
+          {currentCharacter === 6 &&
+            <div className='section__content flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
+              <motion.img
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: "1" }}
+                src={character_5}
+                alt='character-5'
+                className='h-[475px]'
+              />
+            </div>
+          }
+        </AnimatePresence>
+        <div className='section__content flex flex-col items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+          <div className='relative'>
+            <img src={type_border} alt='character-1' className='h-full w-full' />
+            {currentPositions.map((position, index) => (
+              <img
+                key={`${position.top}-${position.left}-${index}`}
+                src={images[index]}
+                alt={`type-${index + 1}`}
+                className={`absolute hover:cursor-pointer`}
+                style={{
+                  ...position,
+                  transform: 'translate(-50%, -50%)',
+                  animationName: animation ? `move-${index}` : 'none',
+                  animationDuration: '2s',
+                  animationFillMode: 'forwards',
+                }}
+                onClick={() => handleSelect(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
