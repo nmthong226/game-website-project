@@ -17,7 +17,7 @@ import character_7 from '/character-7.png';
 import type_border from '/type-border.png';
 import DynamicImage from '../../utils/DynamicImage';
 import character_decor from '/character_decor.png';
-import decor_element from '/decor-element.png';
+import decor_element from '/test-3.png';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useAnimate, usePresence } from "framer-motion"
 
@@ -97,6 +97,17 @@ const Character = () => {
         </div>
       </div>
       <div className='section__content '>
+        <div className='section__content flex flex-row absolute top-1/2 left-64 transform -translate-x-1/2 -translate-y-1/2 z-10'>
+          <motion.img
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: "1" }}
+            src={decor_element}
+            alt='character-6'
+            className='h-[780px]'
+          />
+        </div>
         <AnimatePresence>
           {currentCharacter === 0 &&
             <div className='section__content flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
