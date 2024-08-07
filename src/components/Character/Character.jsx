@@ -15,6 +15,22 @@ import character_5 from '/character-5-2.png';
 import character_6 from '/character-6.png';
 import character_7 from '/character-7.png';
 import type_border from '/type-border.png';
+
+import nd_icon from '/nd-icon.png';
+import nd_name from '/nd-name-2.png';
+import nd_stats from '/nd-stats.png';
+import nd_skill from '/nd-skill.gif';
+
+import mg_icon from '/mg-icon.png';
+import mg_name from '/mg-name.png';
+import mg_stats from '/mg-stats.png';
+import mg_skill from '/mg-skill.gif';
+
+import vd_icon from '/vd-icon.png';
+import vd_name from '/vd-name.png';
+import vd_stats from '/vd-stats.png';
+import vd_skill from '/vd-skill.gif';
+
 import DynamicImage from '../../utils/DynamicImage';
 import character_decor from '/character_decor.png';
 import decor_element from '/test-3.png';
@@ -97,17 +113,174 @@ const Character = () => {
         </div>
       </div>
       <div className='section__content '>
-        <div className='section__content flex flex-row absolute top-1/2 left-64 transform -translate-x-1/2 -translate-y-1/2 z-10'>
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: "1" }}
-            src={decor_element}
-            alt='character-6'
-            className='h-[780px]'
-          />
-        </div>
+        <AnimatePresence>
+          {currentCharacter === 3 &&
+            <div className='section__content flex flex-row absolute top-1/2 transform -translate-y-1/2 z-10'>
+              <img
+                src={decor_element}
+                alt='character-6'
+                className='h-[780px]'
+              />
+              <div className='absolute mt-10 left-[5%] space-y-4'>
+                <motion.img
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  src={mg_name} alt='icon' className='h-[140px]' />
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  className='relative'>
+                  <img
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: "1" }}
+                    src={mg_icon}
+                    alt='icon'
+                    className='h-[60px]' />
+                  <span
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: "1" }}
+                    className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-2xl text-[#123456] text-nowrap'>
+                    Ngũ hành: Mộc
+                  </span>
+                </motion.div>
+                <motion.img
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  src={mg_skill} alt='icon' className='h-[230px]' />
+                <motion.img
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  src={mg_stats}
+                  alt='icon'
+                  className='h-[200px]' />
+              </div>
+            </div>
+          }
+        </AnimatePresence>
+        <AnimatePresence>
+          {currentCharacter === 4 &&
+            <div className='section__content flex flex-row absolute top-1/2 transform -translate-y-1/2 z-10'>
+              <img
+                src={decor_element}
+                alt='character-6'
+                className='h-[780px]'
+              />
+              <div className='absolute mt-10 left-[5%] space-y-4'>
+                <motion.img
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  src={nd_name} alt='icon' className='h-[140px]' />
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  className='relative'>
+                  <img
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: "1" }}
+                    src={nd_icon}
+                    alt='icon'
+                    className='h-[60px]' />
+                  <span
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: "1" }}
+                    className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-2xl text-[#123456] text-nowrap'>
+                    Ngũ hành: Mộc
+                  </span>
+                </motion.div>
+                <motion.img
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  src={nd_skill} alt='icon' className='h-[230px]' />
+                <motion.img
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  src={nd_stats}
+                  alt='icon'
+                  className='h-[200px]' />
+              </div>
+            </div>
+          }
+        </AnimatePresence>
+        <AnimatePresence>
+          {currentCharacter === 5 &&
+            <div className='section__content flex flex-row absolute top-1/2 transform -translate-y-1/2 z-10'>
+              <img
+                src={decor_element}
+                alt='character-6'
+                className='h-[780px]'
+              />
+              <div className='absolute mt-10 left-[5%] space-y-4'>
+                <motion.img
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  src={vd_name} alt='icon' className='h-[140px]' />
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  className='relative'>
+                  <img
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: "1" }}
+                    src={vd_icon}
+                    alt='icon'
+                    className='h-[60px]' />
+                  <span
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: "1" }}
+                    className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-2xl text-[#123456] text-nowrap'>
+                    Ngũ hành: Thổ
+                  </span>
+                </motion.div>
+                <motion.img
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  src={vd_skill} alt='icon' className='h-[230px]' />
+                <motion.img
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  transition={{ duration: "1" }}
+                  src={vd_stats}
+                  alt='icon'
+                  className='h-[200px]' />
+              </div>
+            </div>
+          }
+        </AnimatePresence>
         <AnimatePresence>
           {currentCharacter === 0 &&
             <div className='section__content flex flex-row absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
