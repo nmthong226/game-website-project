@@ -32,13 +32,13 @@ const Home = () => {
                 </div>
             </div>
             <div className='section__content'>
-                <div className='flex absolute top-0 left-0 p-4 px-20 space-x-2'>
+                <div className='flex absolute top-[2%] left-[5%] space-x-[10%]'>
                     <DynamicImage
                         src={logo}
                         alt='logo'
                         originalWidth={500}
                         originalHeight={500}
-                        className={"rounded-xl border-4 border-white"}
+                        className={"rounded-xl"}
                         ratio={0.05}
                     />
                     <DynamicImage
@@ -59,7 +59,7 @@ const Home = () => {
                         ratio={0.06}
                     />
                 </div>
-                <div className='bt-play absolute top-[135px] left-[640px]'>
+                <div className='bt-play absolute top-[15%] left-[40%]'>
                     <DynamicImage
                         src={playButton}
                         alt='playButton'
