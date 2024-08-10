@@ -12,8 +12,8 @@ function App() {
       <NavBar/>
       <Home/>
       <News/>
-      <Character/>
       <Feature/>
+      <Character/>
     </div>
   )
 }
